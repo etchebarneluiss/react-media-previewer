@@ -1,6 +1,6 @@
 {
   "name": "@etchebarneluiss/react-media-previewer",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "A media previewer component for React",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
