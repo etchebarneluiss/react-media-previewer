@@ -15,7 +15,7 @@ import { AiOutlineRotateLeft, AiOutlineRotateRight } from "react-icons/ai";
 
 type PropType = {
   url: string;
-  urlType: string;
+  urlType?: string;
 };
 
 const PreviewModal: React.FC<PropType> = ({ url, urlType }) => {

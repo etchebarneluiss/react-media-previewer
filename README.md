@@ -19,13 +19,15 @@
 ## Installation
 
 ```
-npm install react-media-previewer
+npm install @etchebarneluiss/react-media-previewer
+
 ```
 
 or
 
 ```
-yarn add react-media-previewer
+yarn add @etchebarneluiss/react-media-previewer
+
 ```
 
 ## Usage
@@ -43,6 +45,7 @@ function App() {
         visible={visible}
         setVisible={setVisible}
         urls={["YOUR IMAGE URL", "YOUR IMAGE URL"]}
+        urlsTypes={["YOUR FILE MIME TYPE", "YOUR FILE MIME TYPE"]}
       />
     </div>
   );
@@ -66,6 +69,7 @@ render(<App />, document.getElementById("app"));
 | visible    | bollean  | whether the previewer is visible or not                         |
 | setVisible | function | function called to close the previewer when previewer is opened |
 | urls       | string[] | media file urls                                                 |
+| urlsTypes  | string[] | media file mime types                                           |
 
 ## Roadmap
 
@@ -82,6 +86,10 @@ render(<App />, document.getElementById("app"));
 - More features
   - Keyboard support
   - ...
+
+## Credits
+
+This project is forked from the original repository by Ruilisi. I would like to extend my gratitude to them for their excellent work. You can find the original repository [here](https://github.com/ruilisi/react-media-previewer).
 
 ## License
 

@@ -17,7 +17,7 @@ type PropType = {
   visible: boolean;
   setVisible: (visible: boolean) => void;
   urls: string[];
-  urlsTypes: string[];
+  urlsTypes?: string[];
 };
 
 const PreviewModal: React.FC<PropType> = ({
@@ -29,7 +29,7 @@ const PreviewModal: React.FC<PropType> = ({
   const [copyed, setCopyed] = useState<boolean>(false);
   const [index, setIndex] = useState(0);
   const currentUrl = urls[index];
-  const currentUrlType = urlsTypes[index];
+  const currentUrlType = urlsTypes?.at(index);
 
   return (
     <Modal
