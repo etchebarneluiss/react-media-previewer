@@ -1,7 +1,7 @@
 const isExtInclude = (filename: string, extList: string[]) => {
   const dotPos = filename.lastIndexOf(".");
   if (dotPos >= 0) {
-    const ext = filename.substr(dotPos);
+    const ext = filename.substring(dotPos);
     return extList.includes(ext.toLowerCase());
   }
   return false;
@@ -20,6 +20,14 @@ const excelExts = [
 ];
 const pptExts = [".ppt", ".pptx"];
 
+const getFilename = (filename: string) => {
+  const queryPos = filename.indexOf("?");
+  if (queryPos >= 0) {
+    filename = filename.substring(0, queryPos);
+  }
+  return filename;
+};
+
 export const isImageFile = (contentType: string) => {
   return contentType.startsWith("image");
 };
@@ -37,13 +45,16 @@ export const isPDFFile = (contentType: string) => {
 };
 
 export const isOfficeWordFile = (filename: string) => {
+  filename = getFilename(filename);
   return isExtInclude(filename, wordExts);
 };
 
 export const isOfficeExcelFile = (filename: string) => {
+  filename = getFilename(filename);
   return isExtInclude(filename, excelExts);
 };
 
 export const isOfficePPTFile = (filename: string) => {
+  filename = getFilename(filename);
   return isExtInclude(filename, pptExts);
 };
