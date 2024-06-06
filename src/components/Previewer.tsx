@@ -17,12 +17,19 @@ type PropType = {
   visible: boolean;
   setVisible: (visible: boolean) => void;
   urls: string[];
+  urlsTypes: string[];
 };
 
-const PreviewModal: React.FC<PropType> = ({ visible, setVisible, urls }) => {
+const PreviewModal: React.FC<PropType> = ({
+  visible,
+  setVisible,
+  urls,
+  urlsTypes,
+}) => {
   const [copyed, setCopyed] = useState<boolean>(false);
   const [index, setIndex] = useState(0);
   const currentUrl = urls[index];
+  const currentUrlType = urlsTypes[index];
 
   return (
     <Modal
@@ -41,7 +48,7 @@ const PreviewModal: React.FC<PropType> = ({ visible, setVisible, urls }) => {
       <div className="flex w-full items-center justify-end fixed top-6 right-4">
         <div className="flex">
           <a
-            href={`${currentUrl}?download/${currentUrl.split("/").pop()}`}
+            href={currentUrl}
             className="my-auto mx-4 bg-black rounded-full p-2"
           >
             <AiOutlineDownload
@@ -81,7 +88,7 @@ const PreviewModal: React.FC<PropType> = ({ visible, setVisible, urls }) => {
           </a>
         </div>
       </div>
-      <File url={currentUrl} />
+      <File url={currentUrl} urlType={currentUrlType} />
       <a
         className={`my-auto mx-4 bg-black rounded-full p-3 fixed md:top-1/2 md:bottom-auto left-2 sm:bottom-8 sm:top-auto ${
           index === 0 ? "hidden" : "block"

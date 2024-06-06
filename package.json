@@ -1,6 +1,6 @@
 {
-  "name": "react-media-previewer",
-  "version": "1.3.10",
+  "name": "@etchebarneluiss/react-media-previewer",
+  "version": "1.4.0",
   "description": "A media previewer component for React",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ruilisi/react-media-previewer.git"
+    "url": "https://github.com/etchebarneluiss/react-media-previewer.git"
   },
   "author": "Ruilisi",
   "license": "MIT",

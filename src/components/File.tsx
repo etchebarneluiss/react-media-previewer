@@ -15,11 +15,12 @@ import { AiOutlineRotateLeft, AiOutlineRotateRight } from "react-icons/ai";
 
 type PropType = {
   url: string;
+  urlType: string;
 };
 
-const PreviewModal: React.FC<PropType> = ({ url }) => {
+const PreviewModal: React.FC<PropType> = ({ url, urlType }) => {
   const [rotate, setRotate] = useState<number>(0);
-  const type = mime.lookup(url) || "image";
+  const type = mime.lookup(url) || urlType || "image";
   const mediaFile = () => {
     if (isImageFile(type))
       return (
