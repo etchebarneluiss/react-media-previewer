@@ -59,21 +59,27 @@ const PreviewModal: React.FC<PropType> = ({ url, urlType }) => {
       return (
         <iframe
           className={styles.docContainer}
-          src={`https://view.officeapps.live.com/op/embed.aspx?src=${url}`}
+          src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
+            url
+          )}`}
         />
       );
     if (isOfficePPTFile(url))
       return (
         <iframe
           className={styles.pptContainer}
-          src={`https://view.officeapps.live.com/op/embed.aspx?src=${url}`}
+          src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
+            url
+          )}`}
         />
       );
     if (isOfficeExcelFile(url))
       return (
         <iframe
           className={styles.excelContainer}
-          src={`https://view.officeapps.live.com/op/embed.aspx?src=${url}`}
+          src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
+            url
+          )}`}
         />
       );
     if (isVideoFile(type) || isAudioFile(type))
