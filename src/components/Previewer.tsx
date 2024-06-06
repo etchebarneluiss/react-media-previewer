@@ -50,6 +50,7 @@ const PreviewModal: React.FC<PropType> = ({
           <a
             href={currentUrl}
             className="my-auto mx-4 bg-black rounded-full p-2"
+            target="_blank"
             download
           >
             <AiOutlineDownload
